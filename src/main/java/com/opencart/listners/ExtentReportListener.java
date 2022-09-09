@@ -23,7 +23,7 @@ public class ExtentReportListener extends DriverFactory implements ITestListener
 
 	private static final String OUTPUT_FOLDER = "./build/";
 	static String currDate = new SimpleDateFormat("yyyyMMddHHmm'.txt'").format(new Date());
-	private static final String FILE_NAME = "TestExecutionReport_"+currDate+".html";
+	private static final String FILE_NAME = "TestExecutionReport.html";
 
 	private static ExtentReports extent = init();
 	public static ThreadLocal<ExtentTest> test = new ThreadLocal<ExtentTest>();
