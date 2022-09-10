@@ -30,7 +30,8 @@ public class DriverFactory {
 	 *@param browserName
 	 *@return driver */
 	public WebDriver init_driver(Properties prop) {
-		String browserName = prop.getProperty("browser").trim();
+		//String browserName = prop.getProperty("browser").trim();
+		String browserName = System.getProperty("browser");
 		System.out.println("Passed browserName is : "+browserName);
 		optionManager = new OptionsManager(prop);
 		
