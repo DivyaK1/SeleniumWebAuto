@@ -1,19 +1,22 @@
 pipeline{
-
-agent any
-
-stages{
-		stage("Build"){
-		steps{
-		     echo("Build project")
-		}
-	}
-	stage("Run UTs"){
-		steps{
-		     echo("run unit test cases")
-		}
-	}
-	stage("Run SITs"){
+    
+    agent any
+    
+    stages{
+        
+        stage("Build"){
+            steps{
+                echo("Build project")
+            }
+        }
+        
+        stage("Run UTs"){
+            steps{
+                echo("run unit test cases")
+            }
+        }
+        
+        stage("Run SITs"){
             steps{
                 echo("run integration test cases")
             }
@@ -53,7 +56,13 @@ stages{
             steps{
                 echo("deploy to prod")
             }
-        
         }
+        
+        
+        
     }
     
+    
+    
+    
+}
