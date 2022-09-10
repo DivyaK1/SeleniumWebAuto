@@ -13,9 +13,8 @@ public class CheckOutPage {
 	private WebDriver driver;
 	private ElementUtil eleUtil;
 	
-	//private By prodNameLink= By.xpath("//div[@class='table-responsive']//child::tbody//td[2]/a");
+	
 	private By prodNameLink= By.partialLinkText("MacBook Pro");
-	//private By quantity = By.xpath("//div[@class='table-responsive']//child::tbody//td[4]//input[@class='form-control']");
 	private By quantity = By.xpath("(//input[@class='form-control'])[1]");
 	private By remove = By.xpath("//div[@class='table-responsive']//child::tbody//td[4]//button[@type='button']");
 	private By price = By.xpath("(//div[@class='table-responsive']//child::tbody//td)[last()-1]");
@@ -38,7 +37,6 @@ public class CheckOutPage {
 		System.out.println("product : "+product);
 		cartData.put("prodName", product);
 		String prodCount = eleUtil.getAttributeValue(quantity, "value");
-		//float qty = Float.parseFloat(prodCount);
 		cartData.put("quantity", prodCount);
 		String prodPrice= eleUtil.doGetText(price);
 		cartData.put("price", prodPrice);
