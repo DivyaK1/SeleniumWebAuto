@@ -36,7 +36,7 @@ pipeline
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/DivyaK1/SeleniumWebAuto.git'
-                    sh "mvn clean install"
+                    sh "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunner/testng_regression.xml"
                     
                 }
             }
