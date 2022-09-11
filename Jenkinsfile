@@ -9,19 +9,8 @@ pipeline
     stages 
     {
         stage('Build') 
-        {
-            steps
-            {
-                 git 'https://github.com/DivyaK1/March2022SeleniumFramework.git'
-                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
-            }
-            post 
-            {
-                success
-                {
-                    testng '**/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target/*.jar'
-                }
+        {  steps{
+                echo("Build project")
             }
         }
         
