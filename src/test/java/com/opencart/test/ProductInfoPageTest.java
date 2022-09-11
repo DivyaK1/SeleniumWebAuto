@@ -51,7 +51,7 @@ public class ProductInfoPageTest  extends BaseTest {
 	@DataProvider
 	public Object[][] getProductInfoData() {
 		return new Object[][] 
-				{{ "Macbook","MacBook Pro", "Product 18", "$2,000.00","In Stock","$2,000.00"}, { "iMac","iMac", "Product 14", "$100.00","In Stock","$100.00"}};
+				{{ "Macbook","MacBook Pro", "Product 18", "$2,000.00","In Stock","$2,000.00"}, { "iMac","iMac", "Product 14", "$122.00","In Stock","$100.00"}};
 	}
 	@Test(enabled = false)
 	public void productInfoDescriptionTest() {
