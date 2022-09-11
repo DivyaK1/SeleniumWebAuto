@@ -3,14 +3,25 @@ pipeline
     agent any
     
     tools{
-    	maven 'm3'
+    	maven 'M3'
         }
 
     stages 
     {
         stage('Build') 
-        {  steps{
-                echo("Build project")
+        {
+            steps
+            {
+                 git 'https://github.com/jglick/simple-maven-project-with-tests.git'
+                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
+            }
+            post 
+            {
+                success
+                {
+                    junit '**/target/surefire-reports/TEST-*.xml'
+                    archiveArtifacts 'target/*.jar'
+                }
             }
         }
         
