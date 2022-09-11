@@ -36,7 +36,7 @@ pipeline
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/DivyaK1/SeleniumWebAuto.git'
-                    bat "mvn clean install"
+                    sh "mvn clean install"
                     
                 }
             }
