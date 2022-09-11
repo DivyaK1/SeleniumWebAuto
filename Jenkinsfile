@@ -12,14 +12,14 @@ pipeline
         {
             steps
             {
-                 git 'https://github.com/jglick/simple-maven-project-with-tests.git'
+                 git 'https://github.com/DivyaK1/March2022SeleniumFramework.git'
                  sh "mvn -Dmaven.test.failure.ignore=true clean package"
             }
             post 
             {
                 success
                 {
-                    junit '**/target/surefire-reports/TEST-*.xml'
+                    testng '**/target/surefire-reports/TEST-*.xml'
                     archiveArtifacts 'target/*.jar'
                 }
             }
